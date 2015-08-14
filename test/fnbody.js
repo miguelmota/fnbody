@@ -4,7 +4,7 @@ var fnbody = require('../fnbody');
 test('fnbody', function (t) {
   'use strict';
 
-  t.plan(7);
+  t.plan(8);
 
   t.equal(fnbody(), undefined);
   t.equal(fnbody({}), undefined);
@@ -24,4 +24,5 @@ function foo() {
 }
 
   t.equal(fnbody(foo), "  var foo = \'bar\';\n  return function(qux) {\n    return foo + qux;\n  };");
+  t.equal(Function(fnbody(foo))()('qux'), 'barqux');
 });
