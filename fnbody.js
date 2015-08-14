@@ -4,9 +4,8 @@
   function fnbody(fn) {
     if (typeof fn === 'function') {
       return fn.toString()
-      .replace(/^[^{]*{\s*/,'')
-      .replace(/\s*}[^}]*$/,'')
-      .trim();
+      .replace(/^[^{]*{\n*/,'')
+      .replace(/\n*}[^}]*$/,'');
     }
   }
 

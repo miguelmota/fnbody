@@ -26,7 +26,7 @@ function foo() {
   };
 }
 
-console.log(fnbody(foo)); // "var foo = \'bar\';\n  return function(qux) {\n    return foo + qux;\n  };");
+console.log(fnbody(foo)); // "  var foo = \'bar\';\n  return function(qux) {\n    return foo + qux;\n  };");
 ```
 
 # Test
